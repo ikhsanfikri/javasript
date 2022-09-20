@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <h3 align="center">INFORMASI GEMPA</h3>
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Lokasi</th>
+          <th>Skala Gempa</th>
+          <th>Dampak dari Gempa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          class Gempa {
+            constructor(no, lokasi, skala) {
+              this.no = no;
+              this.lok = lokasi;
+              this.skal = skala;
+            }
+
+            dampak() {
+              if (this.skal <= 2) this.dampakgempa = 'Tidak Terasa';
+              else if (this.skal > 2 && this.skal <= 4) this.dampakgempa = 'Bangunan Retak-Retak';
+              else if (this.skal > 4 && this.skal <= 6) this.dampakgempa = 'Bangunan Roboh';
+              else if (this.skal > 6) this.dampakgempa = 'Bangunan Roboh dan Berpotensi Tsunami';
+              else this.dampakgempa = 'tidak ada data'
+              return this.dampakgempa;
+            }
+
+            infoGempa() {
+              this.info = document.write(` <tr>
+                                            <td>${this.no}</td>
+                                            <td>${this.lok}</td>
+                                            <td>${this.skal}</td>
+                                            <td>${this.dampak()}</td>
+                                            </tr>
+                                            `);
+            }
+          }
+
+        //Buatlah 10 object gempa
+        //g1, g2, g3 dst ...
+
+          gem1 = new Gempa(
+            1, 'Jambi', 3
+            );
+          gem2 = new Gempa(
+            2, 'Sumatra Utara', 5
+            );
+          gem3 = new Gempa(
+            3, 'Bengkulu', 7
+            );
+          gem4 = new Gempa(
+            4, 'Lampung', 6
+            );
+          gem5 = new Gempa(
+            5, 'Garut', 4
+            );
+          gem6 = new Gempa(
+            6, 'Jawa Tengah', 2
+            );
+          gem7 = new Gempa(
+            7, 'Banten', 5
+            );
+          gem8 = new Gempa(
+            8, 'Jawa Barat', 6
+            );
+          gem9 = new Gempa(
+            9, 'Jawa Timur', 7
+            );
+          gem10 = new Gempa(
+            10, 'Jakarta', 8
+            );
+
+          //---------------------------------------------------------------------------
+
+          gem1.infoGempa();
+          gem2.infoGempa();
+          gem3.infoGempa();
+          gem4.infoGempa();
+          gem5.infoGempa();
+          gem6.infoGempa();
+          gem7.infoGempa();
+          gem8.infoGempa();
+          gem9.infoGempa();
+          gem10.infoGempa();
+        </script>
+      </tbody>
+    </table>
+  </body>
+</html>
